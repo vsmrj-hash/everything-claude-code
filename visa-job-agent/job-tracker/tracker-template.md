@@ -174,3 +174,51 @@ Every Monday: Review all applications sent >10 business days ago → send Follow
 ---
 
 *Tracker v1.0 | Started: 2026-05-24*
+
+---
+
+## DAY 1 ACTIVITY LOG — 2026-05-24
+
+### INBOX SCAN FINDINGS
+
+| # | Thread | Status | Action |
+|---|--------|--------|--------|
+| 1 | Pearson — PM Interview (cancelled, reschedule pending) | 🟡 Active | Follow-up drafted |
+| 2 | Marsh Risk — Application rejected (requisition filled) | 🔴 Closed | Labelled Rejected |
+| 3 | Eli Lilly — Application rejected | 🔴 Closed | Labelled Rejected |
+| 4 | Shine.com — Recruiter viewed profile | ℹ️ FYI | No action |
+| 5 | Talent500 — Job alerts | ℹ️ FYI | Check manually |
+
+### GMAIL LABELS CREATED
+- 🔵 Job Hunt / Applied
+- 🟢 Job Hunt / Interview Active
+- 🔴 Job Hunt / Rejected
+- 🟡 Job Hunt / Follow-Up Needed
+
+### COLD EMAIL DRAFTS CREATED (check Gmail Drafts)
+
+| # | Company | Country | To | Subject | Draft ID |
+|---|---------|---------|-----|---------|----------|
+| 1 | HubSpot | 🇮🇪 Ireland | sarah.may@hubspot.com | AI content ops, Dublin-ready | r-175811364854312468 |
+| 2 | Personio | 🇩🇪 Germany | julian.scholze@personio.com | AI marketing ops for B2B SaaS — visa needed | r-4269377134715094388 |
+| 3 | Contentful | 🇩🇪 Germany | claire.baah-danso@contentful.com | Content ops + AI background — Berlin-ready | r6118933002552047376 |
+| 4 | Hootsuite | 🇨🇦 Canada | careers@hootsuite.com | Social automation ops, Canada-ready | r8042007544322386311 |
+| 5 | Booking.com | 🇳🇱 Netherlands | talent@booking.com | Digital growth + AI ops — Amsterdam-ready | r1504562571680549486 |
+
+### PEARSON FOLLOW-UP
+- Draft created → reply to HRAPACTalentExperience@pearson.com (cc: kshitij.sinha@pearson.com)
+- Draft ID: r-7295052471056059934
+- **ACTION NEEDED: Review and send this first — it's the hottest lead in your inbox**
+
+### NOTES
+- Apollo people search requires paid plan — can't auto-find hiring manager emails
+- Hootsuite + Booking.com sent to careers inbox (no named TA contact found publicly)
+- HubSpot: Sarah May (Recruiting Manager, Dublin) — named contact
+- Personio: Julian Scholze (Global TA Lead) — named contact
+- Contentful: Claire Baah-Danso (Recruiter, Berlin) — named contact
+
+### FOLLOW-UP SCHEDULE
+- Pearson: Already 2 days, send today
+- Cold emails above: Follow up in 5 business days (2026-05-31)
+- Final follow-up if no reply: 2026-06-05
+
