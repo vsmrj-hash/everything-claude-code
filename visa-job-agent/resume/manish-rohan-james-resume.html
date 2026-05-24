@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manish Rohan James — Resume</title>
+  <style>
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── PAGE SETUP ─── */
+    @page {
+      size: A4;
+      margin: 18mm 20mm 18mm 20mm;
+    }
+
+    body {
+      font-family: 'Calibri', 'Arial', sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 20px 28px;
+    }
+
+    /* ─── HEADER ─── */
+    .header {
+      border-bottom: 2.5px solid #1a3a5c;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+
+    .name {
+      font-size: 22pt;
+      font-weight: 700;
+      color: #1a3a5c;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #3a6ea5;
+      margin-top: 2px;
+      margin-bottom: 8px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 18px;
+      font-size: 9.5pt;
+      color: #444;
+    }
+
+    .contact-row span::before {
+      content: '▸ ';
+      color: #3a6ea5;
+      font-size: 8pt;
+    }
+
+    /* ─── SECTION ─── */
+    .section {
+      margin-bottom: 13px;
+    }
+
+    .section-title {
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1a3a5c;
+      border-bottom: 1px solid #cdd8e8;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+    }
+
+    /* ─── SUMMARY ─── */
+    .summary p {
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #222;
+    }
+
+    /* ─── SKILLS GRID ─── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4px 16px;
+      font-size: 9.5pt;
+    }
+
+    .skills-grid .skill-item::before {
+      content: '✓  ';
+      color: #3a6ea5;
+      font-size: 9pt;
+    }
+
+    /* ─── TOOLS ROW ─── */
+    .tools-row {
+      margin-top: 8px;
+      font-size: 9.5pt;
+    }
+
+    .tools-row .tool-category {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 3px;
+      flex-wrap: wrap;
+    }
+
+    .tool-label {
+      font-weight: 700;
+      color: #1a3a5c;
+      min-width: 90px;
+    }
+
+    .tool-values {
+      color: #333;
+    }
+
+    /* ─── EXPERIENCE ─── */
+    .job {
+      margin-bottom: 12px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .job-dates {
+      font-size: 9.5pt;
+      color: #555;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .job-company {
+      font-size: 9.5pt;
+      color: #3a6ea5;
+      font-weight: 600;
+      margin-top: 1px;
+      margin-bottom: 5px;
+    }
+
+    .job-location {
+      color: #666;
+      font-weight: 400;
+    }
+
+    .job ul {
+      padding-left: 14px;
+      list-style: none;
+    }
+
+    .job ul li {
+      font-size: 10pt;
+      margin-bottom: 4px;
+      color: #222;
+      position: relative;
+      padding-left: 12px;
+    }
+
+    .job ul li::before {
+      content: '•';
+      color: #3a6ea5;
+      position: absolute;
+      left: 0;
+      font-size: 11pt;
+      line-height: 1.3;
+    }
+
+    /* ─── EDUCATION ─── */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      font-size: 10.5pt;
+    }
+
+    .edu-dates {
+      font-size: 9.5pt;
+      color: #555;
+      font-weight: 600;
+    }
+
+    .edu-school {
+      font-size: 9.5pt;
+      color: #3a6ea5;
+      font-weight: 600;
+    }
+
+    /* ─── LANGUAGES ─── */
+    .lang-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      font-size: 9.5pt;
+    }
+
+    .lang-item strong {
+      color: #1a1a1a;
+    }
+
+    .lang-level {
+      color: #555;
+    }
+
+    /* ─── CERTS ─── */
+    .cert-row {
+      font-size: 9.5pt;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 0;
+      flex-direction: column;
+    }
+
+    .cert-row span {
+      color: #444;
+    }
+
+    /* ─── PRINT ─── */
+    @media print {
+      body { padding: 0; }
+      .section { page-break-inside: avoid; }
+      a { color: #1a3a5c; text-decoration: none; }
+    }
+
+    a { color: #3a6ea5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+  <header class="header">
+    <div class="name">Manish Rohan James</div>
+    <div class="title">AI Generalist &amp; Digital Operations Manager</div>
+    <div class="contact-row">
+      <span>manishrohan2.rj@proton.me</span>
+      <span>+91-9700035385</span>
+      <span><a href="https://linkedin.com/in/vsmrj">linkedin.com/in/vsmrj</a></span>
+      <span>Hyderabad, India — Open to Relocation (Visa Sponsorship Required)</span>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════ SUMMARY ══════════════════════════════ -->
+  <section class="section summary">
+    <div class="section-title">Professional Summary</div>
+    <p>
+      AI Generalist and Digital Operations Manager with 8+ years of experience building AI-augmented
+      content workflows, automating social media operations, and coordinating cross-functional digital
+      projects at scale. Combines hands-on generative AI implementation — including prompt engineering,
+      agentic automation, and GEO/AEO optimisation — with proven delivery track record at Cambridge
+      University Press and fast-moving AI startups. Adept at bridging technical AI capability with
+      business growth outcomes. Actively seeking a visa-sponsored role in Europe, Canada, or Australia.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════ SKILLS ═══════════════════════════════ -->
+  <section class="section">
+    <div class="section-title">Core Competencies</div>
+    <div class="skills-grid">
+      <span class="skill-item">Generative AI &amp; Prompt Engineering</span>
+      <span class="skill-item">Agentic AI Workflow Automation</span>
+      <span class="skill-item">Social Media Operations (Instagram, LinkedIn)</span>
+      <span class="skill-item">GEO &amp; AEO Optimisation</span>
+      <span class="skill-item">Content Strategy &amp; Editorial Planning</span>
+      <span class="skill-item">Marketing Automation</span>
+      <span class="skill-item">Business Intelligence &amp; Analytics</span>
+      <span class="skill-item">Agile / Scrum Project Management</span>
+      <span class="skill-item">Cross-functional Team Leadership</span>
+      <span class="skill-item">Data-Driven Decision Making</span>
+      <span class="skill-item">Digital Asset Management</span>
+      <span class="skill-item">Rights &amp; Compliance Coordination</span>
+    </div>
+
+    <div class="tools-row">
+      <div class="tool-category">
+        <span class="tool-label">AI / LLM:</span>
+        <span class="tool-values">Claude, GPT-4, Perplexity AI, Midjourney</span>
+      </div>
+      <div class="tool-category">
+        <span class="tool-label">Automation:</span>
+        <span class="tool-values">Make.com (Integromat), Zapier, n8n</span>
+      </div>
+      <div class="tool-category">
+        <span class="tool-label">Social / CMS:</span>
+        <span class="tool-values">Instagram, LinkedIn, Buffer, Hootsuite, Notion</span>
+      </div>
+      <div class="tool-category">
+        <span class="tool-label">Analytics:</span>
+        <span class="tool-values">Google Analytics 4, Meta Business Suite, LinkedIn Analytics, Excel (Advanced)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ EXPERIENCE ═══════════════════════════ -->
+  <section class="section">
+    <div class="section-title">Professional Experience</div>
+
+    <!-- Job 1 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Social Media Manager</span>
+        <span class="job-dates">Jan 2024 – Mar 2025</span>
+      </div>
+      <div class="job-company">Spotlit AI <span class="job-location">· Remote</span></div>
+      <ul>
+        <li>Engineered end-to-end automation pipelines for Instagram and LinkedIn, cutting manual
+            publishing effort by ~60% while maintaining consistent daily output across both platforms.</li>
+        <li>Implemented real-time trend monitoring and performance analytics feedback loops, enabling
+            rapid content pivots that increased average post reach within the first quarter.</li>
+        <li>Managed multi-platform content calendar, coordinating AI-generated and human-edited assets
+            to ensure brand consistency and timely distribution.</li>
+        <li>Applied GEO (Generative Engine Optimisation) and AEO (Answer Engine Optimisation) principles
+            to social content strategy, improving discoverability in AI-powered search surfaces.</li>
+      </ul>
+    </div>
+
+    <!-- Job 2 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Social Media Manager &amp; Content Designer</span>
+        <span class="job-dates">Mar 2023 – Dec 2023</span>
+      </div>
+      <div class="job-company">Keyblocks Strategy <span class="job-location">· Hyderabad, India</span></div>
+      <ul>
+        <li>Designed and executed integrated content strategies for B2B clients across multiple industries,
+            driving consistent improvement in engagement and follower growth.</li>
+        <li>Directed a dedicated content team — overseeing briefs, quality control, editorial scheduling,
+            and final delivery across all client accounts.</li>
+        <li>Produced high-quality long-form articles, social posts, and campaign copy tailored to niche
+            professional audiences, increasing organic reach.</li>
+        <li>Ran multi-channel social campaigns from concept to analysis, providing clients with
+            performance reports and strategic recommendations.</li>
+      </ul>
+    </div>
+
+    <!-- Job 3 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Media Delivery Coordinator</span>
+        <span class="job-dates">Jun 2019 – Aug 2021</span>
+      </div>
+      <div class="job-company">Cambridge University Press <span class="job-location">· Hyderabad, India</span></div>
+      <ul>
+        <li>Coordinated global artwork commissioning and rights compliance workflows for educational
+            publishing assets across international markets, maintaining zero compliance breaches.</li>
+        <li>Managed end-to-end production of voiceover and audio assets, liaising with studios,
+            rights holders, and editorial teams to meet strict global publication deadlines.</li>
+        <li>Oversaw digital asset organisation and distribution pipelines, ensuring assets met
+            technical and quality standards for worldwide digital release.</li>
+        <li>Acted as central coordination point between editorial, legal, and production teams across
+            multiple time zones.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════ EDUCATION ════════════════════════════ -->
+  <section class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-row">
+      <span class="edu-degree">Bachelor of Pharmacy (B.Pharm)</span>
+      <span class="edu-dates">2011 – 2015</span>
+    </div>
+    <div class="edu-school">Jawaharlal Nehru Technological University Hyderabad (JNTUH) · India</div>
+  </section>
+
+  <!-- ═══════════════════════════════ LANGUAGES ════════════════════════════ -->
+  <section class="section">
+    <div class="section-title">Languages</div>
+    <div class="lang-row">
+      <span class="lang-item"><strong>English</strong> <span class="lang-level">— Native / C2</span></span>
+      <span class="lang-item"><strong>Hindi</strong> <span class="lang-level">— Native / C2</span></span>
+      <span class="lang-item"><strong>Telugu</strong> <span class="lang-level">— Native / C2</span></span>
+      <span class="lang-item"><strong>German</strong> <span class="lang-level">— Elementary / A2 (actively learning)</span></span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CERTIFICATIONS ═══════════════════════ -->
+  <section class="section">
+    <div class="section-title">Certifications &amp; Professional Development</div>
+    <div class="cert-row">
+      <span>▸ <strong>Forage Virtual Experience Programme</strong> — Theforage.com (2026)
+        &nbsp;<a href="https://www.theforage.com/completion-certificates/YtWaumzWHmKiqP63y/zSefEeEKvojiQqiaH_YtWaumzWHmKiqP63y_695ffa3e487d6ae0f5e8101e_1767903376306_completion_certificate.pdf?raw=1" style="font-size:8.5pt; color:#3a6ea5;">[Verify]</a>
+      </span>
+    </div>
+  </section>
+
+</body>
+</html>
