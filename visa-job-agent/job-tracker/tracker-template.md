@@ -1,0 +1,176 @@
+# JOB APPLICATION TRACKER
+## Manish Rohan James — Visa Sponsorship Job Hunt
+
+**Started:** 2026-05-24
+**Goal:** 30+ new jobs/day | 5+ applications/day | Weekly optimization review
+
+---
+
+## MASTER TRACKER
+
+| # | Date Applied | Company | Country | Job Title | Source | Match Score | Sponsor Status | Recruiter Name | Recruiter Email | App Status | Email Sent | Follow-up 1 | Follow-up 2 | Interview Status | Notes |
+|---|-------------|---------|---------|-----------|--------|-------------|----------------|----------------|-----------------|------------|------------|------------|------------|-----------------|-------|
+| 1 | | | | | | /100 | 🟢/🟡/🔴 | | | Applied/Screening/Interview/Offer/Rejected | ✅/❌ | Date | Date | | |
+
+**Sponsor Status Legend:**
+- 🟢 = Confirmed sponsorship mentioned in JD
+- 🟡 = Likely (company has prior international hires)
+- 🔴 = Unknown (needs research)
+
+**App Status Options:**
+- `Applied` — Submitted application
+- `Email Sent` — Cold outreach only (no formal application yet)
+- `Screening` — Initial contact / phone screen scheduled
+- `Interview` — Active interview process
+- `Offer` — Offer received
+- `Rejected` — Formal rejection
+- `Ghosted` — No response after 2 follow-ups
+- `Withdrawn` — Pulled own application
+
+---
+
+## WEEK 1 JOB SEARCH LOG (2026-05-24)
+
+### Jobs Found Today: [TARGET: 30+]
+
+| # | Job Title | Company | Country | Source | Sponsorship Signal | Match Score | Action |
+|---|-----------|---------|---------|--------|-------------------|-------------|--------|
+| 1 | AI Content Manager | [TBD] | Canada | LinkedIn | Mentioned | /100 | Apply |
+| 2 | | | | | | | |
+
+---
+
+## DAILY SEARCH TARGETS
+
+### Search Queries to Run Daily
+
+**LinkedIn Jobs:**
+```
+"AI generalist" visa sponsorship
+"AI operations" relocation Canada
+"prompt engineering" sponsorship Netherlands
+"social media automation" visa Germany
+"content strategy AI" visa sponsored Ireland
+"digital marketing manager" relocation Australia
+"project manager AI" sponsorship Sweden
+"marketing automation" relocation New Zealand
+"generative AI" work permit Europe
+"AI marketing" sponsor international
+```
+
+**Indeed / Seek:**
+```
+AI content manager visa sponsorship remote
+social media manager relocation package
+marketing automation manager sponsor
+AI operations remote visa
+content automation manager relocate
+```
+
+**Wellfound / Otta:**
+```
+AI generalist international
+prompt engineer remote
+growth manager remote hire anywhere
+content strategy AI startup
+```
+
+---
+
+## COMPANY WATCHLIST (Known Visa Sponsors in Target Countries)
+
+### Canada
+- Shopify (Ottawa/Toronto) — active international hiring
+- Hootsuite (Vancouver) — social media company, relevant
+- Wattpad — content platform
+- Wave Financial — fintech, known sponsor
+- Cohere — AI company, highly relevant
+- Ada Support — AI company
+- Coveo — AI search
+- Dialpad — tech company
+
+### Australia
+- Atlassian (Sydney) — strong international hiring history
+- Canva (Sydney) — design, content relevant
+- Afterpay — fintech
+- Seek — job board, they understand visa roles
+- REA Group — tech company
+- SafetyCulture — startup, known sponsor
+- Culture Amp — HR tech, international team
+
+### Germany (English-speaking companies)
+- Personio (Munich) — HR software, active international hiring
+- Celonis (Munich) — AI process mining
+- Contentful — headless CMS, content-adjacent
+- GetYourGuide (Berlin) — travel tech
+- Delivery Hero (Berlin) — international team
+- HelloFresh (Berlin) — known sponsor
+- SumUp — fintech
+- Zalando (Berlin) — ecommerce
+- Pitch (Berlin) — presentation software
+
+### Netherlands
+- Booking.com (Amsterdam) — massive international team
+- Adyen — payments
+- TomTom — mapping tech
+- Elastic — search tech
+- NEAR Protocol — Web3
+- Takeaway.com — food delivery
+- Mollie — payments
+
+### Ireland
+- HubSpot (Dublin) — marketing software, PERFECT match
+- Stripe (Dublin) — payments, tech-forward
+- Google (Dublin) — AI teams
+- Intercom (Dublin) — messaging platform
+- Workday (Dublin) — HR software
+- Zendesk (Dublin) — customer service
+- Dropbox (Dublin) — file sharing
+- Salesforce (Dublin) — CRM
+
+### Sweden
+- Spotify (Stockholm) — music/content tech
+- Klarna — fintech
+- King — gaming
+- Mojang — gaming
+- iZettle — payments
+- Bambora — fintech
+
+### New Zealand
+- Xero (Wellington) — accounting software, known sponsor
+- Trade Me — marketplace
+- Pushpay — tech company
+- Vend — retail tech
+
+---
+
+## WEEKLY KPI DASHBOARD
+
+| Week | Jobs Found | Applications Sent | Cold Emails | Responses | Response Rate | Interviews | Notes |
+|------|-----------|-------------------|-------------|-----------|---------------|------------|-------|
+| W1 (May 24) | | | | | | | First week |
+| W2 (May 31) | | | | | | | |
+| W3 (Jun 7) | | | | | | | First optimization |
+| W4 (Jun 14) | | | | | | | |
+
+**Target Response Rate:** 5-10% (industry standard for cold outreach)
+**Target Interview Rate:** 20% of responses
+
+---
+
+## REJECTION LOG (Learn from every rejection)
+
+| Date | Company | Country | Role | Reason (if given) | Pattern Detected |
+|------|---------|---------|------|--------------------|-----------------|
+| | | | | | |
+
+---
+
+## FOLLOW-UP SCHEDULE
+
+Every Monday: Review all applications sent >5 business days ago → send Follow-up #1
+Every Monday: Review all applications sent >10 business days ago → send Follow-up #2 (final)
+
+---
+
+*Tracker v1.0 | Started: 2026-05-24*
