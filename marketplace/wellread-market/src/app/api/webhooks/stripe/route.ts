@@ -7,7 +7,7 @@ export async function POST(req: Request) {
   }
 
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-    apiVersion: '2025-05-28.basil',
+    apiVersion: '2026-04-22.dahlia',
   })
 
   const body = await req.text()
@@ -73,9 +73,4 @@ export async function POST(req: Request) {
   }
 
   return NextResponse.json({ received: true })
-}
-
-// Required: disable body parsing so we get raw body for signature verification
-export const config = {
-  api: { bodyParser: false },
 }
