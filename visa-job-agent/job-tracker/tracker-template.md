@@ -376,3 +376,28 @@ These are real people with confirmed LinkedIn profiles:
 - **Neil Katz** — TA Leader Global, Cohere Toronto
 - **Sabena Singh** — PR Lead, Wattpad Toronto
 
+
+---
+
+## DAY 2 UPDATE — RESUME LINK FIX (2026-05-25, second pass)
+
+### Resume link corrected
+Old link (wrong): `https://s.cloudhire.ai/aqUpln`
+New link (correct): `https://docs.google.com/document/d/1522VGSHDYFXnaXuiS4bLF59hhOvcQh_r_Ykiy71xJqc/edit?usp=sharing`
+
+File: **MANISH ROHAN JAMES** (Google Doc, created May 4 2026)
+Permissions: ✅ Anyone with link → Viewer
+
+### Delete previous 30 drafts (all superseded)
+r9109533012570427114, r-7827695055311281767, r1539222001372540272, r6341962970672001542,
+r817123411520503453, r-6171290113092299795, r1056727057296123337, r-1201043977202741145,
+r-3559495493993053459, r-8621404497394146417, r4141462868244521705, r-7601901871400973600,
+r1211343297437265162, r-5796650028485371785, r7843942171492559985, r-1652963448520199103,
+r2617110563764192815, r52005384249099115, r1831441339434312664, r-850659991748458023,
+r-578639816248231424, r-176508924990232389, r4374232508770789025, r3692810446863690896,
+r-4425734879852525142, r-1735379178832879618, r676599828083636441, r2604336247653902171,
+r-7801533061214029753, r1502005669167711141
+
+### ✅ 30 CURRENT DRAFTS (correct resume link, signature embedded)
+All same companies/contacts as previous batch — resume link now points to Google Doc.
+
