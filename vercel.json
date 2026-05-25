@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "marketplace/wellread-market/package.json",
-      "use": "@vercel/next"
-    }
-  ]
-}
