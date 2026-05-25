@@ -222,3 +222,58 @@ Every Monday: Review all applications sent >10 business days ago → send Follow
 - Cold emails above: Follow up in 5 business days (2026-05-31)
 - Final follow-up if no reply: 2026-06-05
 
+
+---
+
+## DAY 1 UPDATE — RESUME + STARTUP OUTREACH (2026-05-25)
+
+### ⚠️ ONE MANUAL STEP REQUIRED — DO THIS BEFORE SENDING ANY EMAIL
+
+**Your resume in Google Drive is set to "private" (owner only).**
+I cannot change Drive permissions via the agent. Please do this manually:
+
+1. Go to → https://drive.google.com/file/d/1QNtcnvi8hilqlSsv6IjqRRJRIJeJlgqP/view
+2. Click **Share** → **Change to Anyone with link** → **Viewer**
+3. Copy the shareable link
+4. For maximum impact: **also download the PDF and attach it manually** to each email draft before hitting Send
+
+The CloudHire profile link (https://s.cloudhire.ai/aqUpln) is included in all drafts as a fallback.
+
+---
+
+### OLD DRAFTS TO DELETE (superseded — no resume link)
+
+Delete these 5 from Gmail Drafts (they have no resume):
+- r-175811364854312468 (HubSpot v1)
+- r-4269377134715094388 (Personio v1)
+- r6118933002552047376 (Contentful v1)
+- r8042007544322386311 (Hootsuite v1)
+- r1504562571680549486 (Booking.com v1)
+
+---
+
+### ✅ NEW COLD EMAIL DRAFTS — V2 WITH RÉSUMÉ LINK (check Gmail Drafts)
+
+| # | Company | Country | Contact | Subject | Draft ID |
+|---|---------|---------|---------|---------|----------|
+| 1 | HubSpot | 🇮🇪 Ireland | sarah.may@hubspot.com | AI content ops, Dublin-ready [résumé attached] | r-8693276223534994448 |
+| 2 | Personio | 🇩🇪 Germany | julian.scholze@personio.com | AI marketing ops for B2B SaaS [résumé attached] | r1932363725637215397 |
+| 3 | Contentful | 🇩🇪 Germany | claire.baah-danso@contentful.com | Content ops + AI background [résumé attached] | r5581045587086497465 |
+| 4 | Hootsuite | 🇨🇦 Canada | careers@hootsuite.com | Social automation ops, Canada-ready [résumé attached] | r-3722278624109687511 |
+| 5 | Booking.com | 🇳🇱 Netherlands | talent@booking.com | Digital growth + AI ops [résumé attached] | r-1577631708471123486 |
+
+### ✅ NEW STARTUP COLD EMAIL DRAFTS — VISA-SPONSORING STARTUPS
+
+| # | Company | Country | Contact | Why Relevant | Draft ID |
+|---|---------|---------|---------|-------------|----------|
+| 6 | Billy Grace | 🇳🇱 Netherlands | careers@billygrace.com | AI marketing startup, $3.2M funded, Amsterdam | r291221519250664252 |
+| 7 | Tines | 🇮🇪 Ireland | roisin.finneran@tines.com | AI workflow automation, named recruiter contact, Dublin | r4408001188101789855 |
+| 8 | n8n | 🇩🇪 Germany | careers@n8n.io | Workflow automation, $180M Series C, Berlin | r-4534097409134732682 |
+| 9 | Parloa | 🇩🇪 Germany | alexander.dotsch@parloa.com | Conversational AI, $350M Series D, Berlin — named TA lead | r-8802508574821984693 |
+| 10 | Brightflag | 🇮🇪 Ireland | careers@brightflag.com | AI legal tech startup, Dublin | r-7245762654066532366 |
+
+### RESUME STATUS
+- Drive file: https://drive.google.com/file/d/1QNtcnvi8hilqlSsv6IjqRRJRIJeJlgqP/view ← **needs to be made public**
+- CloudHire profile (used in all emails): https://s.cloudhire.ai/aqUpln
+- Title found: "Vsmrj Resume.pdf" (Oct 2025 version — most complete)
+
