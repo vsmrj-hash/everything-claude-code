@@ -1,6 +1,6 @@
 # Everything Claude Code (ECC) — Agent Instructions
 
-This is a **production-ready AI coding plugin** providing 28 specialized agents, 125 skills, 60 commands, and automated hook workflows for software development.
+This is a **production-ready AI coding plugin** providing 32 specialized agents, 126 skills, 61 commands, and automated hook workflows for software development.
 
 **Version:** 1.9.0
 
@@ -43,6 +43,10 @@ This is a **production-ready AI coding plugin** providing 28 specialized agents,
 | rust-build-resolver | Rust build errors | Rust build failures |
 | pytorch-build-resolver | PyTorch runtime/CUDA/training errors | PyTorch build/training failures |
 | typescript-reviewer | TypeScript/JavaScript code review | TypeScript/JavaScript projects |
+| marketplace-orchestrator | Marketplace pipeline brain | Building/launching any marketplace on Vercel |
+| marketplace-designer | Marketplace UI/UX design system | Design tokens, components, layouts |
+| marketplace-deployer | Marketplace scaffold + Vercel deploy | Code generation, service wiring, deployment |
+| marketplace-publisher | Marketplace QA + go-live gate | Review, audit, publication approval |
 
 ## Agent Orchestration
 
@@ -55,6 +59,7 @@ Use agents proactively without user prompt:
 - Multi-channel communication triage → **chief-of-staff**
 - Autonomous loops / loop monitoring → **loop-operator**
 - Harness config reliability and cost → **harness-optimizer**
+- Building or launching a marketplace → **marketplace-orchestrator** (drives the full 4-agent pipeline)
 
 Use parallel execution for independent operations — launch multiple agents simultaneously.
 
