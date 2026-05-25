@@ -277,3 +277,102 @@ Delete these 5 from Gmail Drafts (they have no resume):
 - CloudHire profile (used in all emails): https://s.cloudhire.ai/aqUpln
 - Title found: "Vsmrj Resume.pdf" (Oct 2025 version — most complete)
 
+
+---
+
+## DAY 2 UPDATE — 20 NEW DRAFTS + SIGNATURE FIX (2026-05-25)
+
+### SIGNATURE FIX: What changed
+All drafts (old and new) now have the full signature block embedded DIRECTLY in the email body, separated by `--`. This means the signature is literal body text — Gmail's own signature layer cannot touch it. The old 10 drafts that were missing this are recreated below.
+
+### OLD DRAFTS TO DELETE (superseded — signature not embedded)
+Delete these 10 from Gmail Drafts:
+| # | Company | Old Draft ID |
+|---|---------|-------------|
+| 1 | HubSpot (v2) | r-8693276223534994448 |
+| 2 | Personio (v2) | r1932363725637215397 |
+| 3 | Contentful (v2) | r5581045587086497465 |
+| 4 | Hootsuite (v2) | r-3722278624109687511 |
+| 5 | Booking.com (v2) | r-1577631708471123486 |
+| 6 | Billy Grace (v1) | r291221519250664252 |
+| 7 | Tines (v1) | r4408001188101789855 |
+| 8 | n8n (v1) | r-4534097409134732682 |
+| 9 | Parloa (v1) | r-8802508574821984693 |
+| 10 | Brightflag (v1) | r-7245762654066532366 |
+
+---
+
+### ✅ ALL 30 CURRENT DRAFTS (signature embedded in all)
+
+#### IRELAND 🇮🇪
+| # | Company | Contact | Email | Draft ID |
+|---|---------|---------|-------|----------|
+| 1 | HubSpot | Sarah May | sarah.may@hubspot.com | r-92003941237504316 |
+| 2 | Intercom | Rachel Murphy (Sr Recruiter GTM/G&A) | rachel.murphy@intercom.com | r-2303613914012012290 |
+| 3 | Stripe | Roisin McGrane (Recruiter) | roisin.mcgrane@stripe.com | r5763180174170775169 |
+| 4 | Workday | Leah Houlihan (Principal TA Partner Sales EMEA) | leah.houlihan@workday.com | r8708782065238489298 |
+| 5 | Zendesk | Kate Gaynor (Director SMB Global Marketing) | kate.gaynor@zendesk.com | r3001826461700363653 |
+| 6 | Tines | Roisin Finneran (Recruiter) | roisin.finneran@tines.com | r7353860019201080572 |
+| 7 | Brightflag | careers@ | careers@brightflag.com | r-6198935203635348738 |
+
+#### GERMANY 🇩🇪
+| # | Company | Contact | Email | Draft ID |
+|---|---------|---------|-------|----------|
+| 8 | Personio | Julian Scholze | julian.scholze@personio.com | r-4253469453520066980 |
+| 9 | Contentful | Claire Baah-Danso | claire.baah-danso@contentful.com | r-9045827004661919563 |
+| 10 | Celonis | Helena Hoyer (TA Partner) | helena.hoyer@celonis.com | r7095406726268792847 |
+| 11 | HelloFresh | Matthew Fox (AD International Content Strategy) | matthew.fox@hellofresh.com | r4527102893984389894 |
+| 12 | Zalando | Shilpa Mishra (Sr TA Partner AI & Tech) | shilpa.mishra@zalando.de | r-3922157237445532767 |
+| 13 | GetYourGuide | careers@ | careers@getyourguide.com | r1580945531309254300 |
+| 14 | n8n | careers@ | careers@n8n.io | r-101410290353302365 |
+| 15 | Parloa | Alexander Dötsch (TA Lead) | alexander.dotsch@parloa.com | r-2661461252441731965 |
+
+#### NETHERLANDS 🇳🇱
+| # | Company | Contact | Email | Draft ID |
+|---|---------|---------|-------|----------|
+| 16 | Booking.com | talent@ | talent@booking.com | r8918353225810335026 |
+| 17 | Adyen | Kirsten Visser (Team Lead Commercial Recruitment EMEA) | kirsten.visser@adyen.com | r-7613142459168697698 |
+| 18 | WeTransfer | Nessim Higson (Global Executive Creative Director) | nessim.higson@wetransfer.com | r6346349571080587765 |
+| 19 | Mollie | Arye Kirzner (Head of Talent Acquisition) | arye.kirzner@mollie.com | r-6145851827176745679 |
+| 20 | Billy Grace | careers@ | careers@billygrace.com | r-1412172363178605268 |
+| 21 | Bird (MessageBird) | careers@ | careers@bird.com | r4964919730020587717 |
+
+#### CANADA 🇨🇦
+| # | Company | Contact | Email | Draft ID |
+|---|---------|---------|-------|----------|
+| 22 | Hootsuite | careers@ | careers@hootsuite.com | r-8476066894797081356 |
+| 23 | Shopify | Greg Thorpe (Senior Lead, TA Ottawa) | greg.thorpe@shopify.com | r-2925848313348081781 |
+| 24 | Cohere | Neil Katz (TA Leader Global) | neil.katz@cohere.com | r-6971303340698189187 |
+| 25 | Ada | careers@ | careers@ada.cx | r5441877221007361984 |
+| 26 | Wattpad | Sabena Singh (PR Lead) | sabena.singh@wattpad.com | r-6277988388562962584 |
+
+#### DISTRIBUTED 🌍
+| # | Company | Contact | Email | Draft ID |
+|---|---------|---------|-------|----------|
+| 27 | Remote.com | careers@ | careers@remote.com | r3007333963660122531 |
+| 28 | Deel | careers@ | careers@deel.com | r3623464606795204139 |
+
+#### AUSTRALIA 🇦🇺
+| # | Company | Contact | Email | Draft ID |
+|---|---------|---------|-------|----------|
+| 29 | Canva | careers@ | careers@canva.com | r2693783205036411479 |
+| 30 | Atlassian | talent@ | talent@atlassian.com | r-1455709344673654616 |
+
+---
+
+### NAMED CONTACTS FOUND (Sprouts data intelligence)
+These are real people with confirmed LinkedIn profiles:
+- **Roisin McGrane** — Recruiter, Stripe Dublin
+- **Rachel Murphy** — Sr Recruiter GTM/G&A, Intercom Dublin
+- **Leah Houlihan** — Principal TA Partner Sales EMEA, Workday Dublin
+- **Kate Gaynor** — Director SMB Global Marketing, Zendesk Ireland
+- **Helena Hoyer** — TA Partner, Celonis Munich
+- **Matthew Fox** — AD International Content Strategy, HelloFresh Berlin (DIRECT content hire)
+- **Shilpa Mishra** — Global Sr TA Partner AI & Tech, Zalando Berlin
+- **Kirsten Visser** — Team Lead Commercial Recruitment EMEA, Adyen Amsterdam
+- **Nessim Higson** — Global Executive Creative Director, WeTransfer Amsterdam
+- **Arye Kirzner** — Head of Talent Acquisition, Mollie Amsterdam
+- **Greg Thorpe** — Senior Lead TA, Shopify Ottawa
+- **Neil Katz** — TA Leader Global, Cohere Toronto
+- **Sabena Singh** — PR Lead, Wattpad Toronto
+
