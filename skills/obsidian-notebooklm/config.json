@@ -1,0 +1,16 @@
+{
+  "vault_path": "~/obsidian-vault",
+  "folders": {
+    "inbox": "00-inbox",
+    "notes": "10-notes",
+    "notebooks": "20-notebooks",
+    "resources": "30-resources",
+    "daily": "40-daily",
+    "maps": "50-maps"
+  },
+  "default_notebook": "Default",
+  "wikilink_style": "shortest",
+  "frontmatter": true,
+  "status_stages": ["seedling", "growing", "evergreen"],
+  "node_types": ["thought", "source", "insight", "idea", "video", "image"]
+}
