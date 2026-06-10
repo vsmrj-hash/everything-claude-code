@@ -255,9 +255,11 @@ LANGUAGES = [
 def base_styles(accent=NAVY):
     return {
         "name_style": ParagraphStyle("name", fontSize=22, fontName="Helvetica-Bold",
-                                     textColor=accent, spaceAfter=2, alignment=TA_CENTER),
+                                     textColor=accent, leading=28, spaceAfter=6,
+                                     alignment=TA_CENTER),
         "title_style": ParagraphStyle("title_s", fontSize=11, fontName="Helvetica",
-                                      textColor=STEEL, spaceAfter=4, alignment=TA_CENTER),
+                                      textColor=STEEL, leading=15, spaceAfter=4,
+                                      alignment=TA_CENTER),
         "contact_style": ParagraphStyle("contact_s", fontSize=8.5, fontName="Helvetica",
                                         textColor=GREY, spaceAfter=6, alignment=TA_CENTER),
         "section_style": ParagraphStyle("section_s", fontSize=10.5, fontName="Helvetica-Bold",
@@ -600,11 +602,11 @@ def build_japan(filename):
     story.append(Paragraph(
         f"<b>{NAME}</b> / <font size='14'>マニッシュ・ロハン・ジェームズ</font>",
         ParagraphStyle("jp_name", fontSize=20, fontName="Helvetica-Bold",
-                       textColor=JP_RED, spaceAfter=2, alignment=TA_CENTER)))
+                       textColor=JP_RED, leading=26, spaceAfter=6, alignment=TA_CENTER)))
     story.append(Paragraph(
         f"{TITLE} / AIオペレーション・自動化スペシャリスト",
         ParagraphStyle("jp_title", fontSize=10, fontName="Helvetica",
-                       textColor=STEEL, spaceAfter=4, alignment=TA_CENTER)))
+                       textColor=STEEL, leading=15, spaceAfter=4, alignment=TA_CENTER)))
     story.append(Paragraph(
         f"{EMAIL}  |  {PHONE}  |  {LINKEDIN}  |  Hyderabad, India",
         s["contact_style"]))
