@@ -41,68 +41,71 @@ LOCATION_FULL = "Hyderabad, India"
 
 SUMMARY = (
     "Most teams lose 60%+ of operational capacity to manual, repeatable work — that's the "
-    "gap I close. Tasked with transforming how B2B and content-first organisations operate, "
-    "I have architected 40+ automation pipelines across Make, Zapier, and n8n — integrated "
-    "with Claude and GPT-4 — over 6 years in digital operations (2 years AI-focused). "
-    "The result: 60% reduction in manual processing time, 3× content throughput, and "
-    "ad-hoc spreadsheets replaced by real-time KPI dashboards — without adding headcount."
+    "gap I close. Over 9 years in operations (2 years AI-focused), I have solo-run 3 "
+    "scientific conferences per week across Rome, Barcelona, and Frankfurt; coordinated 400+ "
+    "digital assets across 40 international markets with zero compliance breaches; and built "
+    "40+ automation pipelines that cut manual effort 60% and tripled content throughput — "
+    "without adding headcount. I bring the same precision to every system I build."
 )
 
 SUMMARY_UK = (
     "Organisations running on manual workflows are spending 60% of their operational capacity "
-    "on effort that should not exist. Over six years in digital operations — two of them "
-    "dedicated to AI-driven automation — I have designed and deployed 40+ automation pipelines "
-    "using Make, Zapier, and n8n, embedded Claude and GPT-4 into 8 live production systems, "
-    "and rebuilt ad-hoc reporting into real-time KPI dashboards. Each engagement delivers the "
-    "same three outcomes: 60% less manual overhead, 3× content throughput, and decision-making "
-    "grounded in data instead of instinct. Currently learning German (A2); open to relocation "
-    "within Europe."
+    "on effort that should not exist. Over 9 years in operations — two of them dedicated to "
+    "AI-driven automation — I have solo-organised scientific conferences across Rome, Barcelona, "
+    "and Frankfurt; coordinated 400+ assets across 40 international markets at Cambridge "
+    "University Press; and built 40+ automation pipelines that cut manual overhead by 60% and "
+    "tripled content throughput. I have worked in European cities and understand cross-cultural "
+    "delivery. Currently learning German (A2); open to relocation within Europe."
 )
 
 SUMMARY_DE = (
-    "Unternehmen verlieren 60 % ihrer operativen Kapazität durch manuelle, wiederholbare Arbeit — "
-    "genau diese Lücke schließe ich. In 6 Jahren digitaler Operations-Erfahrung (2 Jahre KI-fokussiert) "
-    "habe ich 40+ Automatisierungs-Workflows in Make, Zapier und n8n aufgebaut und Claude sowie GPT-4 "
-    "in 8 Produktionssysteme integriert — mit dem Ergebnis: 60 % weniger manueller Aufwand, "
-    "3-facher Content-Durchsatz, Echtzeit-KPI-Dashboards statt Ad-hoc-Tabellen. "
-    "Deutschlerner (A2), offen für Relocation nach Deutschland oder in die Niederlande."
+    "Unternehmen verlieren 60 % ihrer operativen Kapazität durch manuelle Arbeit — genau diese "
+    "Lücke schließe ich. In 9 Jahren Operations-Erfahrung (2 Jahre KI-fokussiert) habe ich "
+    "eigenständig wissenschaftliche Konferenzen in Rom, Barcelona und Frankfurt organisiert (3 pro Woche), "
+    "400+ digitale Assets über 40 internationale Märkte koordiniert und 40+ Automatisierungs-Workflows "
+    "aufgebaut, die den manuellen Aufwand um 60 % reduzierten. Ich kenne Europa aus der Praxis — "
+    "nicht nur aus dem Lebenslauf. Deutschlerner (A2), offen für Relocation nach Deutschland oder "
+    "in die Niederlande."
 )
 
 SUMMARY_JP = (
-    "I am an AI Operations specialist with 6+ years in digital and global operations. "
-    "My value is concrete: I have built 40+ automation workflows that cut manual processing "
-    "by 60% and managed 400+ digital assets across 40+ international markets with zero "
-    "compliance breaches. I combine the precision required in enterprise publishing "
-    "(Cambridge University Press) with the speed and scale of AI-native content systems. "
-    "I bring reliability, data discipline, and a motivated learner's approach to every team."
+    "I am an AI Operations specialist with 9+ years in digital and global operations. "
+    "My value is concrete: I solo-organised 3 international scientific conferences per week "
+    "across Rome, Barcelona, and Frankfurt; managed 400+ digital assets across 40 markets "
+    "with zero compliance breaches; and built 40+ automation workflows that cut manual "
+    "processing by 60%. I combine the discipline of enterprise publishing (Cambridge "
+    "University Press) with AI-native delivery speed. I am reliable under pressure, "
+    "experienced working across cultures, and a motivated team contributor."
 )
 
 SUMMARY_IN = (
-    "Results-driven AI Operations and Automation Specialist with 6+ years of progressive "
-    "experience across digital operations, content systems, and business intelligence. "
-    "Built 40+ automation workflows (Make, Zapier, n8n) that cut manual effort by 60% and "
-    "replaced 4 Excel-based reporting stacks with live KPI dashboards — saving 6+ hours per "
-    "client per week. Managed 400+ digital assets across 40 international markets at Cambridge "
-    "University Press with zero compliance breaches. Seeking a high-impact role where measurable "
-    "delivery and AI-era thinking create compounding value."
+    "Results-driven AI Operations and Automation Specialist with 9+ years of progressive "
+    "experience across digital operations, international event management, and content systems. "
+    "Solo-organised 3 scientific conferences per week across Rome, Barcelona, and Frankfurt "
+    "for Omics International in 2018; coordinated 400+ digital assets across 40 international "
+    "markets at Cambridge University Press with zero compliance breaches; and built 40+ "
+    "automation workflows that cut manual effort by 60% and replaced 4 reporting stacks with "
+    "live KPI dashboards. Seeking a high-impact role where measurable delivery and AI-era "
+    "thinking create compounding value."
 )
 
 SUMMARY_AUS = (
     "Most teams are spending 60% of their operational capacity on work automation should be "
-    "doing. Over 6 years in digital operations — 2 years AI-focused — I have built 40+ pipelines "
-    "in Make, Zapier, and n8n, embedded generative AI into 8 live systems, and turned ad-hoc "
-    "reporting into real-time KPI dashboards. The numbers: 60% reduction in manual processing, "
-    "3× content throughput, 400+ assets delivered across 40 international markets with zero "
-    "compliance incidents. Open to relocating to Australia and available to start with appropriate notice."
+    "doing. Over 9 years in operations — 2 years AI-focused — I have solo-run international "
+    "scientific conferences across Europe (Rome, Barcelona, Frankfurt), coordinated 400+ assets "
+    "across 40 markets with zero compliance breaches, and built 40+ automation pipelines that "
+    "cut manual effort 60% and tripled content throughput. I have a demonstrated record of "
+    "delivering independently under pressure, across cultures and time zones. Open to relocating "
+    "to Australia and available to commence with appropriate notice."
 )
 
 SUMMARY_NZ = (
     "Operational capacity lost to manual tasks is the most common and most fixable problem in "
-    "digital teams. Over 6 years — 2 of them AI-focused — I have built 40+ automation pipelines, "
-    "embedded Claude and GPT-4 into 8 production systems, and redesigned reporting from "
-    "spreadsheets to real-time dashboards. Delivered: 60% less manual effort, 3× content output, "
-    "400+ assets coordinated across 40 markets with zero compliance breaches. "
-    "Keen to bring that record to a New Zealand team and contribute to Aotearoa's growing tech sector."
+    "digital teams. Over 9 years — 2 AI-focused — I have solo-run 3 international scientific "
+    "conferences per week across European cities, coordinated 400+ assets across 40 markets with "
+    "zero compliance breaches, and built 40+ automation pipelines that cut manual effort 60% "
+    "and tripled content throughput. I work independently, deliver under pressure, and have "
+    "operated across cultures — the same qualities I'd bring to a New Zealand team."
 )
 
 SKILLS = [
@@ -186,6 +189,22 @@ EXPERIENCE = [
             "all assets to global distribution deadlines across 3 continents.",
         ],
     },
+    {
+        "title": "Scientific Conference Coordinator",
+        "company": "Omics International", "location": "Hyderabad, India / Europe",
+        "dates": "2016 – 2019",
+        "bullets": [
+            "Deployed solo to Rome, Barcelona, and Frankfurt in 2018 to plan and execute scientific "
+            "conferences end-to-end — managing up to 3 events per week across 3 countries with zero "
+            "on-site support.",
+            "Owned all conference logistics independently: venue liaison, speaker scheduling, delegate "
+            "registration, AV coordination, and on-site management for multi-day international academic "
+            "events attended by researchers and professionals from across Europe.",
+            "Served as the single point of contact for international speakers, delegates, and venue "
+            "partners across 3 European cities — managing real-time problem-solving across language "
+            "and cultural contexts under continuous high-pressure delivery schedules.",
+        ],
+    },
 ]
 
 PROJECTS = [
@@ -201,16 +220,16 @@ PROJECTS = [
 ACCOMPLISHMENTS = [
     ("40+ automation pipelines built",
      "Cut manual processing 60% across 8 client accounts — zero headcount increase required."),
-    ("4 Excel reporting stacks replaced",
-     "Live KPI dashboards now serve 8 clients, saving 6+ hours per client per week."),
+    ("3 conferences/week · 3 countries · 1 person",
+     "Solo-organised scientific conferences across Rome, Barcelona & Frankfurt for Omics International in 2018."),
     ("400+ digital assets coordinated",
      "Across 40+ international markets at Cambridge University Press — zero compliance breaches in 2 years."),
     ("200+ content items reviewed daily",
      "99%+ policy accuracy at Meta (via Wipro) sustained across 18 consecutive months."),
     ("3× content throughput achieved",
      "34% average post reach improvement QoQ over 15 months at Spotlit AI."),
-    ("4-person team · 6 accounts · 200+ deliverables",
-     "9-month engagement at Keyblocks Strategy — zero missed client deadlines."),
+    ("4 Excel reporting stacks replaced",
+     "Live KPI dashboards save 6+ hrs/client/week and enable same-day decisions across 8 accounts."),
 ]
 
 EDUCATION = ("Bachelor of Pharmacy (B.Pharm)",
