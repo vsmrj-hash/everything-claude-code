@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#060606" />
+<meta name="description" content="Verbal Armor. Intelligent verbal self-defense. Analyze any message and reply with composure, precision, and elegance." />
+<title>Verbal Armor</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.0/tesseract.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<style>
+:root{
+  --bg:#060606;
+  --bg2:#0A0A0A;
+  --panel:rgba(20,20,22,0.60);
+  --panel-solid:#121214;
+  --raised:#1B1B1E;
+  --line:rgba(255,255,255,0.10);
+  --line-strong:rgba(255,255,255,0.20);
+  --text:#F4F4F5;
+  --muted:#9A9AA2;
+  --faint:#5E5E66;
+  --gold:#FFFFFF;
+  --gold-soft:rgba(255,255,255,0.08);
+  --steel:#D4D4D8;
+  --low:#6B6B72;
+  --med:#A8A8B0;
+  --high:#FFFFFF;
+  --r:18px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  min-height:100vh;min-height:100dvh;
+}
+/* ambient atmosphere */
+.atmos{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.atmos::before{content:"";position:absolute;top:-30%;left:-10%;width:70%;height:70%;
+  background:radial-gradient(circle at center,rgba(255,255,255,0.06),transparent 60%);filter:blur(40px)}
+.atmos::after{content:"";position:absolute;bottom:-25%;right:-10%;width:65%;height:65%;
+  background:radial-gradient(circle at center,rgba(255,255,255,0.04),transparent 60%);filter:blur(50px)}
+.grain{position:fixed;inset:0;z-index:0;opacity:.035;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.app{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:0 18px;padding-bottom:calc(28px + var(--safe-b))}
+
+/* header */
+header{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;
+  padding:16px 2px 12px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:linear-gradient(var(--bg),rgba(10,11,15,.5) 70%,transparent)}
+.brand{display:flex;align-items:center;gap:10px;cursor:pointer}
+.crest{width:30px;height:30px;border-radius:9px;border:1px solid var(--line-strong);
+  display:grid;place-items:center;background:linear-gradient(145deg,#1a1d26,#0e1016);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.crest svg{width:17px;height:17px}
+.brand b{font-family:'Fraunces';font-weight:600;font-size:18px;letter-spacing:.2px}
+.brand span{color:var(--gold)}
+.iconbtn{width:38px;height:38px;border-radius:11px;border:1px solid var(--line);background:var(--panel);
+  backdrop-filter:blur(10px);color:var(--muted);display:grid;place-items:center;cursor:pointer;transition:.2s var(--ease)}
+.iconbtn:hover{color:var(--text);border-color:var(--line-strong)}
+.iconbtn svg{width:18px;height:18px}
+
+/* hero */
+.hero{padding:18px 2px 22px}
+.eyebrow{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--gold);opacity:.6}
+h1{font-family:'Fraunces';font-weight:500;font-size:33px;line-height:1.12;margin:0 0 12px;letter-spacing:-.01em}
+h1 i{font-style:italic;color:var(--gold)}
+.sub{color:var(--muted);font-size:15px;max-width:38ch}
+
+/* glass card */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 18px 40px -28px rgba(0,0,0,.8)}
+
+/* input */
+.input-wrap{padding:6px;margin-top:6px}
+textarea{width:100%;min-height:148px;resize:vertical;border:none;outline:none;background:transparent;
+  color:var(--text);font-family:'Inter';font-size:16px;line-height:1.55;padding:16px 16px 6px}
+textarea::placeholder{color:var(--faint)}
+.input-bar{display:flex;align-items:center;gap:8px;padding:8px 10px 10px;border-top:1px solid var(--line);margin-top:4px}
+.chip-btn{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);
+  border:1px solid var(--line);background:rgba(255,255,255,.02);padding:8px 12px;border-radius:11px;cursor:pointer;transition:.2s var(--ease)}
+.chip-btn:hover{color:var(--text);border-color:var(--line-strong)}
+.chip-btn svg{width:15px;height:15px}
+.grow{flex:1}
+.count{font-family:'JetBrains Mono';font-size:11px;color:var(--faint)}
+
+.cta{width:100%;margin-top:14px;border:none;cursor:pointer;border-radius:15px;padding:16px;
+  font-family:'Inter';font-weight:600;font-size:16px;color:#060606;letter-spacing:.01em;
+  background:#FFFFFF;box-shadow:0 12px 30px -16px rgba(255,255,255,.5);
+  transition:.2s var(--ease);display:flex;align-items:center;justify-content:center;gap:9px}
+.cta:hover{transform:translateY(-1px);filter:brightness(.96)}
+.cta:active{transform:translateY(0)}
+.cta:disabled{opacity:.55;cursor:default;transform:none}
+.cta svg{width:18px;height:18px}
+
+.privacy{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;color:var(--faint);font-size:12.5px}
+.privacy svg{width:14px;height:14px;color:var(--muted)}
+
+.platforms{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px;justify-content:center}
+.plat{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.05em;color:var(--faint);
+  border:1px solid var(--line);padding:5px 9px;border-radius:8px}
+
+/* loading */
+.loader{padding:46px 20px;text-align:center}
+.scan{width:54px;height:54px;margin:0 auto 20px;position:relative}
+.scan svg{width:100%;height:100%;color:var(--gold)}
+.scan .ring{position:absolute;inset:0;border:2px solid transparent;border-top-color:var(--gold);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader p{color:var(--muted);font-size:14px}
+.loader .step{font-family:'JetBrains Mono';font-size:12px;color:var(--gold);margin-top:8px;letter-spacing:.05em}
+
+/* dossier */
+.section-label{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin:26px 2px 12px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:"";flex:1;height:1px;background:var(--line)}
+
+.dossier{padding:18px 18px 8px}
+.threat-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:16px}
+.threat-cat{font-family:'Fraunces';font-size:23px;font-weight:500;line-height:1.15}
+.threat-sub{font-family:'JetBrains Mono';font-size:11px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
+.risk-badge{flex-shrink:0;text-align:center;border:1px solid var(--line);border-radius:13px;padding:9px 12px;min-width:74px;background:rgba(255,255,255,.02)}
+.risk-badge .lvl{font-family:'JetBrains Mono';font-weight:600;font-size:14px;letter-spacing:.05em}
+.risk-badge .cap{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-top:3px}
+.risk-low{color:var(--low)} .risk-medium{color:var(--med)} .risk-high{color:var(--high)}
+.b-low{border-color:rgba(255,255,255,.14)} .b-medium{border-color:rgba(255,255,255,.24)} .b-high{border-color:rgba(255,255,255,.5)}
+
+.meter{height:5px;border-radius:3px;background:rgba(255,255,255,.06);overflow:hidden;margin-bottom:18px}
+.meter i{display:block;height:100%;border-radius:3px;transition:width .8s var(--ease)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-bottom:14px}
+.cell{background:var(--panel-solid);padding:13px 14px}
+.cell .k{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.cell .v{font-size:14px;font-weight:500;color:var(--text)}
+.psych{padding:14px 0 4px;border-top:1px solid var(--line)}
+.psych .k{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:7px}
+.psych .v{font-size:14px;color:var(--muted);line-height:1.5;font-style:italic}
+
+/* silence banner */
+.silence{margin-top:16px;padding:16px 18px;border-radius:15px;border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.04);display:flex;gap:13px;align-items:flex-start}
+.silence svg{width:20px;height:20px;color:#FFFFFF;flex-shrink:0;margin-top:1px}
+.silence b{display:block;font-family:'Fraunces';font-size:16px;font-weight:500;margin-bottom:4px}
+.silence p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.5}
+
+/* style switcher */
+.styles-scroll{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 8px;margin:0 -18px;padding-left:18px;padding-right:18px;scrollbar-width:none}
+.styles-scroll::-webkit-scrollbar{display:none}
+.style-chip{flex-shrink:0;border:1px solid var(--line);background:var(--panel);border-radius:13px;padding:11px 14px;cursor:pointer;
+  transition:.22s var(--ease);min-width:118px;backdrop-filter:blur(8px)}
+.style-chip .sg{font-size:15px;margin-bottom:7px;display:block}
+.style-chip .sn{font-size:13px;font-weight:600}
+.style-chip .sd{font-size:10.5px;color:var(--faint);margin-top:2px}
+.style-chip.active{border-color:var(--gold);background:var(--gold-soft);box-shadow:0 0 0 1px var(--gold-soft)}
+.style-chip.active .sn{color:var(--gold)}
+.style-chip.rec{position:relative}
+.style-chip.rec::after{content:"REC";position:absolute;top:-7px;right:9px;font-family:'JetBrains Mono';font-size:8px;
+  letter-spacing:.1em;background:#FFFFFF;color:#060606;padding:2px 5px;border-radius:5px;font-weight:600}
+
+/* response card */
+.resp-card{padding:20px 20px 16px;margin-top:6px;position:relative;overflow:hidden;transition:.3s var(--ease)}
+.resp-head{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.resp-head .g{font-size:16px}
+.resp-head .n{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.resp-text{font-size:18px;line-height:1.55;font-weight:400;min-height:54px}
+.regen{display:grid;place-items:center;min-height:70px;color:var(--faint);font-family:'JetBrains Mono';font-size:12px;gap:10px}
+.regen .dots{display:flex;gap:5px}
+.regen .dots i{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 1.2s var(--ease) infinite}
+.regen .dots i:nth-child(2){animation-delay:.15s}.regen .dots i:nth-child(3){animation-delay:.3s}
+@keyframes pulse{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}
+
+.resp-actions{display:flex;gap:8px;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.act{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line);
+  background:rgba(255,255,255,.02);color:var(--muted);border-radius:11px;padding:11px;cursor:pointer;font-size:13px;font-weight:500;transition:.2s var(--ease)}
+.act:hover{color:var(--text);border-color:var(--line-strong)}
+.act.done{color:#FFFFFF;border-color:var(--line-strong)}
+.act svg{width:15px;height:15px}
+
+/* victorian flagship */
+.resp-card.victorian{background:#0B0B0C;border-color:rgba(255,255,255,.28);box-shadow:0 0 0 1px rgba(255,255,255,.05) inset,0 18px 40px -28px rgba(0,0,0,.9)}
+.resp-card.victorian::before{content:"";position:absolute;inset:6px;border:1px solid rgba(255,255,255,.10);border-radius:13px;pointer-events:none}
+.resp-card.victorian .resp-text{font-family:'Fraunces';font-style:italic;font-weight:400;font-size:21px;color:#FAFAF8;letter-spacing:.005em}
+.resp-card.victorian .resp-head .n{color:#FFFFFF}
+.vic-flourish{text-align:center;font-family:'Fraunces';color:rgba(255,255,255,.4);opacity:1;font-size:16px;letter-spacing:.5em;margin:14px 0 2px}
+
+/* controls */
+.controls{margin-top:14px}
+.controls-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+.ctrl{border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:11px;padding:12px 10px;
+  cursor:pointer;font-size:13px;font-weight:500;transition:.2s var(--ease);text-align:left;display:flex;align-items:center;gap:8px;backdrop-filter:blur(8px)}
+.ctrl:hover{color:var(--text);border-color:var(--line-strong);transform:translateY(-1px)}
+.ctrl .d{width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:.7;flex-shrink:0}
+
+.reset{width:100%;margin-top:22px;border:1px solid var(--line);background:transparent;color:var(--muted);
+  border-radius:13px;padding:14px;cursor:pointer;font-size:14px;font-weight:500;transition:.2s var(--ease)}
+.reset:hover{color:var(--text);border-color:var(--line-strong)}
+
+/* settings sheet */
+.scrim{position:fixed;inset:0;z-index:60;background:rgba(5,6,9,.6);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:.3s var(--ease)}
+.scrim.open{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:61;max-width:560px;margin:0 auto;
+  background:var(--panel-solid);border:1px solid var(--line);border-bottom:none;border-radius:24px 24px 0 0;
+  padding:10px 20px calc(28px + var(--safe-b));transform:translateY(110%);transition:transform .36s var(--ease);box-shadow:0 -20px 60px -20px rgba(0,0,0,.7)}
+.sheet.open{transform:translateY(0)}
+.handle{width:38px;height:4px;border-radius:3px;background:var(--line-strong);margin:6px auto 18px}
+.sheet h3{font-family:'Fraunces';font-weight:500;font-size:20px;margin:0 0 4px}
+.sheet .desc{color:var(--muted);font-size:13.5px;margin-bottom:20px}
+.opt-row{margin-bottom:18px}
+.opt-row .lab{font-size:13px;color:var(--muted);margin-bottom:9px;display:flex;align-items:center;justify-content:space-between}
+.seg{display:flex;gap:6px;background:rgba(255,255,255,.03);padding:4px;border-radius:12px;border:1px solid var(--line)}
+.seg button{flex:1;border:none;background:transparent;color:var(--muted);padding:9px 6px;border-radius:9px;font-size:12.5px;font-weight:500;cursor:pointer;transition:.2s var(--ease)}
+.seg button.on{background:var(--raised);color:var(--text);box-shadow:0 1px 0 rgba(255,255,255,.05)}
+.priv-note{font-size:12px;color:var(--faint);line-height:1.5;margin-top:6px;padding:14px;border:1px solid var(--line);border-radius:12px;background:rgba(124,147,190,.04)}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:calc(26px + var(--safe-b));transform:translate(-50%,20px);z-index:80;
+  background:var(--raised);border:1px solid var(--line-strong);color:var(--text);padding:12px 18px;border-radius:13px;
+  font-size:13.5px;opacity:0;pointer-events:none;transition:.3s var(--ease);box-shadow:0 18px 40px -20px rgba(0,0,0,.9);display:flex;align-items:center;gap:9px;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast svg{width:16px;height:16px;color:var(--gold)}
+
+.hidden{display:none!important}
+.fade-in{animation:fade .45s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(min-width:600px){h1{font-size:38px}.hero{padding-top:26px}}
+
+footer{text-align:center;color:var(--faint);font-size:11.5px;margin-top:30px;line-height:1.7}
+footer .dot{margin:0 7px;opacity:.5}
+</style>
+</head>
+<body>
+<div class="atmos"></div>
+<div class="grain"></div>
+
+<div class="app">
+  <header>
+    <div class="brand" onclick="resetApp()">
+      <div class="crest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/><path d="M9.5 12l1.8 1.8L15 9.5"/>
+        </svg>
+      </div>
+      <b>Verbal<span>Armor</span></b>
+    </div>
+    <button class="iconbtn" onclick="openSettings()" aria-label="Settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+    </button>
+  </header>
+
+  <!-- INPUT VIEW -->
+  <div id="inputView">
+    <div class="hero">
+      <div class="eyebrow">Verbal Self-Defense</div>
+      <h1>Reply with <i>composure</i>,<br>never with regret.</h1>
+      <p class="sub">Paste what was said. Verbal Armor reads the intent behind it, then arms you with a response worthy of the moment.</p>
+    </div>
+
+    <div class="card input-wrap">
+      <textarea id="msgInput" placeholder="Paste the message here…  An insult, a manipulation, a passive-aggressive jab, or an entire conversation." oninput="updateCount()"></textarea>
+      <div class="input-bar">
+        <button class="chip-btn" onclick="document.getElementById('file').click()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>
+          Screenshot
+        </button>
+        <button class="chip-btn" onclick="pasteClip()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+          Paste
+        </button>
+        <span class="grow"></span>
+        <span class="count" id="count">0</span>
+      </div>
+      <input type="file" id="file" accept="image/png,image/jpeg,image/webp" class="hidden" onchange="handleFile(event)">
+    </div>
+
+    <button class="cta" id="analyzeBtn" onclick="runAnalysis()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg>
+      Analyze the message
+    </button>
+
+    <div class="privacy">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Analysis runs privately. No account, no tracking.
+    </div>
+
+    <div class="platforms">
+      <span class="plat">WhatsApp</span><span class="plat">Telegram</span><span class="plat">X</span>
+      <span class="plat">Reddit</span><span class="plat">Discord</span><span class="plat">LinkedIn</span>
+      <span class="plat">Instagram</span><span class="plat">Facebook</span>
+    </div>
+  </div>
+
+  <!-- LOADING -->
+  <div id="loadView" class="hidden">
+    <div class="card loader fade-in">
+      <div class="scan"><div class="ring"></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;inset:12px;width:30px;height:30px"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z"/></svg>
+      </div>
+      <p>Reading intent, tone, and tactics…</p>
+      <div class="step" id="loadStep">Classifying the attack</div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="resultView" class="hidden"></div>
+
+  <footer>
+    Verbal Armor &nbsp;<span class="dot">•</span>&nbsp; Composure as a discipline
+    <br>Built for clarity under pressure. Not a comeback machine.
+  </footer>
+</div>
+
+<!-- SETTINGS SHEET -->
+<div class="scrim" id="scrim" onclick="closeSettings()"></div>
+<div class="sheet" id="sheet">
+  <div class="handle"></div>
+  <h3>Preferences</h3>
+  <p class="desc">Verbal Armor remembers how you like to reply, on this device only.</p>
+
+  <div class="opt-row">
+    <div class="lab">Default tone</div>
+    <div class="seg" id="segTone">
+      <button data-v="calm">Calm</button>
+      <button data-v="balanced">Balanced</button>
+      <button data-v="sharp">Sharp</button>
+    </div>
+  </div>
+  <div class="opt-row">
+    <div class="lab">Response length</div>
+    <div class="seg" id="segLen">
+      <button data-v="short">Short</button>
+      <button data-v="medium">Medium</button>
+      <button data-v="long">Long</button>
+    </div>
+  </div>
+  <div class="opt-row">
+    <div class="lab">Preferred style <span style="color:var(--faint);font-size:11px">remembered</span></div>
+    <div class="seg" id="segStyle">
+      <button data-v="diplomatic">Diplomatic</button>
+      <button data-v="stoic">Stoic</button>
+      <button data-v="victorian">Victorian</button>
+    </div>
+  </div>
+
+  <div class="priv-note">
+    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#9A9AA2" stroke-width="2" style="vertical-align:-2px;margin-right:5px"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    Your messages and preferences never leave your device. There is no server account and nothing is tracked. Preferences are stored in this browser's local storage.
+  </div>
+</div>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">Copied</span></div>
+
+<script>
+/* ---------- style library ---------- */
+const STYLES = [
+  {id:'diplomatic',name:'Diplomatic',g:'🤝',d:'Calm, corporate-safe'},
+  {id:'socratic',name:'Socratic',g:'❓',d:'Questions assumptions'},
+  {id:'intellectual',name:'Intellectual',g:'🧠',d:'Logic & reasoning'},
+  {id:'stoic',name:'Stoic',g:'🏛️',d:'Marcus Aurelius'},
+  {id:'victorian',name:'Victorian Elite',g:'🎩',d:'Quietly devastating',victorian:true},
+  {id:'gentleman',name:'Gentleman Assassin',g:'🥂',d:'Elegant destruction'},
+  {id:'ruthless',name:'Ruthless',g:'⚔️',d:'Civil, maximum force'},
+  {id:'humorous',name:'Humorous',g:'🎭',d:'Witty, never childish'},
+  {id:'supreme',name:'Supreme Court',g:'⚖️',d:'Precise, evidential'},
+  {id:'intel',name:'Intelligence Officer',g:'🕶️',d:'Cold, analytical'},
+  {id:'boardroom',name:'Boardroom Exec',g:'💼',d:'Strategic, powerful'},
+  {id:'samurai',name:'Samurai',g:'🗡️',d:'Minimal, maximal'},
+  {id:'therapist',name:'Therapist',g:'🧩',d:'Emotionally intelligent'},
+  {id:'ghost',name:'Ghost',g:'🌫️',d:'Why silence wins'},
+];
+const STYLE_GUIDE = {
+  diplomatic:"Professional, measured, corporate-safe. De-escalates while holding your position. Nothing quotable against you.",
+  socratic:"Reply mainly with one or two pointed questions that expose the weak assumption beneath their statement. Never lecture.",
+  intellectual:"Dismantle the logic calmly. Name the fallacy or gap in reasoning without jargon dumping. Cool, exact.",
+  stoic:"In the spirit of Marcus Aurelius. Unmoved, grounded, brief. Show their words cannot reach you.",
+  victorian:"Old-world aristocratic English. Exquisitely polite on the surface, quietly devastating underneath. Understatement as a weapon. e.g. 'I had hoped for a more substantial objection.'",
+  gentleman:"The gentleman assassin: warm, gracious, impeccably mannered, and lethal. The smile and the blade are the same gesture.",
+  ruthless:"Maximum force while remaining entirely civil and lawful. No slurs, no threats. Precision over volume. Leave no opening.",
+  humorous:"Genuinely witty and clever. Disarms with humor, never childish, never a meme. The joke carries the point.",
+  supreme:"Like a measured court argument. Evidence-focused, structured, devastating in its restraint. State the standard, show it unmet.",
+  intel:"Cold intelligence-officer detachment. Observational, unbothered, faintly clinical. You are assessing them, not arguing.",
+  boardroom:"Senior executive register. Strategic, outcome-focused, unflappable. Reframe to your agenda and close.",
+  samurai:"Bushido brevity. One or two lines. Maximum impact from minimum words. Silence around the blade.",
+  therapist:"Emotionally intelligent and boundaried. Name the dynamic, hold the boundary, refuse the bait. Calm authority, not coldness.",
+  ghost:"Do NOT write a reply to send. Instead, in 1-2 sentences, explain why silence is the strongest move here and what non-response signals."
+};
+
+/* ---------- state + prefs ---------- */
+let prefs = {tone:'balanced',len:'medium',style:'diplomatic'};
+try{const s=localStorage.getItem('va_prefs');if(s)prefs=Object.assign(prefs,JSON.parse(s));}catch(e){}
+function savePrefs(){try{localStorage.setItem('va_prefs',JSON.stringify(prefs));}catch(e){}}
+
+let state = {text:'',analysis:null,style:null,cache:{},mods:{}};
+
+/* ---------- helpers ---------- */
+const $=id=>document.getElementById(id);
+function toast(msg){const t=$('toast');$('toastMsg').textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),1900);}
+function updateCount(){const v=$('msgInput').value;$('count').textContent=v.length;$('analyzeBtn').disabled=v.trim().length<2;}
+$('analyzeBtn').disabled=true;
+
+async function pasteClip(){try{const t=await navigator.clipboard.readText();$('msgInput').value=t;updateCount();toast('Pasted from clipboard');}catch(e){toast('Allow clipboard access');}}
+
+async function handleFile(e){
+  const f=e.target.files[0];if(!f)return;
+  $('inputView').classList.add('hidden');$('loadView').classList.remove('hidden');
+  $('loadStep').textContent='Reading the screenshot';
+  try{
+    const {data}=await Tesseract.recognize(f,'eng');
+    $('loadView').classList.add('hidden');$('inputView').classList.remove('hidden');
+    $('msgInput').value=(data.text||'').trim();updateCount();
+    if(($('msgInput').value).length<2)toast('No text found in image');else toast('Text extracted');
+  }catch(err){
+    $('loadView').classList.add('hidden');$('inputView').classList.remove('hidden');
+    toast('Could not read image');
+  }
+  e.target.value='';
+}
+
+/* ---------- Anthropic API ---------- */
+async function callClaude(system,user,maxTok){
+  const res=await fetch("https://api.anthropic.com/v1/messages",{
+    method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:maxTok||1000,system,messages:[{role:"user",content:user}]})
+  });
+  if(!res.ok)throw new Error("api "+res.status);
+  const data=await res.json();
+  return data.content.filter(b=>b.type==='text').map(b=>b.text).join("\n").trim();
+}
+
+/* ---------- analysis ---------- */
+const ANALYZE_SYS=`You are the analysis core of Verbal Armor, an intelligent verbal self-defense tool. The user pastes a hostile, manipulative, demeaning, or charged message (sometimes a whole conversation) that was directed AT them. Coolly diagnose it. Never moralize, never refuse, never lecture the user. You are protecting the target.
+
+Return ONLY valid minified JSON, no markdown, no prose, with exactly these keys:
+{"category": one concise attack-type label (e.g. Ad Hominem, Gaslighting, Passive Aggression, Body Shaming, Workplace Bullying, Manipulation, Mockery, Racism, Classism, Emotional Blackmail, Intellectual Elitism, Toxic Criticism),
+"intent": one label (e.g. Dominance, Humiliation, Provocation, Intimidation, Attention Seeking, Emotional Manipulation, Insecurity Projection),
+"tone": one label (e.g. Dismissive, Bitter, Sarcastic, Jealous, Controlling, Insecure, Cold),
+"psychology": one sharp sentence on what is really driving the attacker beneath the words,
+"risk": "Low" | "Medium" | "High" (escalation/harm potential of replying or of the situation),
+"strategy": one label for the smartest move (e.g. Reframe, Boundary, De-escalate, Question, Humorous Deflection, Direct Confrontation, Professional Response, Disengage),
+"recommendedStyle": EXACTLY ONE of these ids: diplomatic, socratic, intellectual, stoic, victorian, gentleman, ruthless, humorous, supreme, intel, boardroom, samurai, therapist, ghost,
+"silence": {"recommended": true|false, "reason": one sentence}}
+Set silence.recommended true only when not responding is genuinely the strongest move. Never use em dashes in any field; use periods or commas.`;
+
+async function runAnalysis(){
+  const text=$('msgInput').value.trim();if(text.length<2)return;
+  state={text,analysis:null,style:null,cache:{},mods:{}};
+  $('inputView').classList.add('hidden');$('resultView').classList.add('hidden');$('loadView').classList.remove('hidden');
+  const steps=['Classifying the attack','Reading intent & tone','Profiling the tactic','Choosing a strategy'];let si=0;
+  $('loadStep').textContent=steps[0];
+  const ti=setInterval(()=>{si=(si+1)%steps.length;$('loadStep').textContent=steps[si];},900);
+  try{
+    let raw=await callClaude(ANALYZE_SYS,'Message directed at me:\n"""\n'+text+'\n"""',700);
+    raw=raw.replace(/```json|```/g,'').trim();
+    const a=JSON.parse(raw);
+    state.analysis=a;state.style=a.recommendedStyle&&STYLES.find(s=>s.id===a.recommendedStyle)?a.recommendedStyle:prefs.style;
+    clearInterval(ti);
+    renderResults();
+    if(!state.analysis.silence?.recommended)genResponse(state.style);
+  }catch(err){
+    clearInterval(ti);
+    $('loadView').classList.add('hidden');$('inputView').classList.remove('hidden');
+    toast('Analysis failed. Try again');
+  }
+}
+
+/* ---------- generation ---------- */
+function lenWords(){return prefs.len==='short'?'Keep it to 1 short sentence.':prefs.len==='long'?'Use 2-4 sentences with room to breathe.':'Keep it to 1-2 sentences.';}
+function toneNudge(){return prefs.tone==='calm'?'Lean calmer and more measured.':prefs.tone==='sharp'?'Lean sharper and more pointed, still civil.':'';}
+
+async function genResponse(styleId){
+  state.style=styleId;
+  const cacheKey=styleId+'|'+(state.mods[styleId]||'');
+  renderResults();
+  if(state.cache[cacheKey]){paintResponse(state.cache[cacheKey]);return;}
+  paintResponse(null,true);
+  const st=STYLES.find(s=>s.id===styleId);
+  const a=state.analysis;
+  const sys=`You write for Verbal Armor: composed, intelligent verbal self-defense. The user received a hostile or manipulative message and needs a reply that protects their dignity. 
+
+Diagnosis. Attack: ${a.category}; intent: ${a.intent}; tone: ${a.tone}.
+
+STYLE = ${st.name}. ${STYLE_GUIDE[styleId]}
+
+Hard rules: stay civil and lawful. No slurs, no threats, no cruelty toward protected traits, never punch down or stoop to their level. Power comes from precision and self-possession, not vulgarity. Never use em dashes anywhere; use periods or commas instead. Write only the reply itself, no quotes around it, no preface, no explanation, no "here is". ${lenWords()} ${toneNudge()} ${state.mods[styleId]?'Adjustment: '+state.mods[styleId]:''}`;
+  try{
+    let out=await callClaude(sys,'They said to me:\n"""\n'+state.text+'\n"""\n\nWrite my reply in the '+st.name+' style.',500);
+    out=out.replace(/^["“]|["”]$/g,'').trim();
+    state.cache[cacheKey]=out;
+    if(state.style===styleId)paintResponse(out);
+  }catch(e){if(state.style===styleId)paintResponse('Could not generate. Tap a style to retry.');}
+}
+
+function applyMod(label){
+  if(!state.style)return;
+  state.mods[state.style]=label;
+  genResponse(state.style);
+}
+
+/* ---------- rendering ---------- */
+function renderResults(){
+  $('loadView').classList.add('hidden');
+  const a=state.analysis;if(!a)return;
+  const rv=$('resultView');rv.classList.remove('hidden');rv.classList.add('fade-in');
+  const risk=(a.risk||'Medium').toLowerCase();
+  const riskPct=risk==='high'?92:risk==='medium'?58:26;
+  const riskColor=risk==='high'?'var(--high)':risk==='medium'?'var(--med)':'var(--low)';
+  const sil=a.silence&&a.silence.recommended;
+
+  rv.innerHTML=`
+    <div class="section-label">Communication Analysis</div>
+    <div class="card dossier">
+      <div class="threat-head">
+        <div>
+          <div class="threat-cat">${esc(a.category)}</div>
+          <div class="threat-sub">Strategy &middot; ${esc(a.strategy)}</div>
+        </div>
+        <div class="risk-badge b-${risk}">
+          <div class="lvl risk-${risk}">${esc(a.risk)}</div>
+          <div class="cap">Risk</div>
+        </div>
+      </div>
+      <div class="meter"><i style="width:${riskPct}%;background:${riskColor}"></i></div>
+      <div class="grid2">
+        <div class="cell"><div class="k">Intent</div><div class="v">${esc(a.intent)}</div></div>
+        <div class="cell"><div class="k">Emotional Tone</div><div class="v">${esc(a.tone)}</div></div>
+      </div>
+      <div class="psych"><div class="k">Psychology</div><div class="v">${esc(a.psychology)}</div></div>
+    </div>
+
+    ${sil?`<div class="silence">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
+      <div><b>Silence is strategically superior</b><p>${esc(a.silence.reason)}</p></div>
+    </div>`:''}
+
+    <div class="section-label">${sil?'If you must respond':'Recommended Response'}</div>
+    <div class="styles-scroll" id="styleScroll"></div>
+
+    <div id="respHolder"></div>
+
+    <div class="controls">
+      <div class="section-label" style="margin-top:20px">Refine</div>
+      <div class="controls-grid">
+        ${['Shorter','Longer','More Professional','More Brutal','More Elegant','More Humorous','More Intelligent','More Direct','More Calm','More Strategic'].map(m=>`<button class="ctrl" onclick="applyMod('${m.toLowerCase().replace('more ','')}')"><span class="d"></span>${m}</button>`).join('')}
+      </div>
+    </div>
+
+    <button class="reset" onclick="resetApp()">Analyze another message</button>
+  `;
+
+  // style chips
+  const sc=$('styleScroll');
+  sc.innerHTML=STYLES.map(s=>`
+    <div class="style-chip ${s.id===state.style?'active':''} ${s.id===a.recommendedStyle?'rec':''}" onclick="genResponse('${s.id}')">
+      <span class="sg">${s.g}</span>
+      <div class="sn">${s.name}</div>
+      <div class="sd">${s.d}</div>
+    </div>`).join('');
+  const act=sc.querySelector('.active');if(act)act.scrollIntoView({inline:'center',block:'nearest'});
+}
+
+function paintResponse(text,loading){
+  const holder=$('respHolder');if(!holder)return;
+  const st=STYLES.find(s=>s.id===state.style)||STYLES[0];
+  const vic=st.victorian?'victorian':'';
+  let body;
+  if(loading){
+    body=`<div class="regen"><div class="dots"><i></i><i></i><i></i></div>Composing ${st.name.toLowerCase()} reply…</div>`;
+  }else if(state.style==='ghost'){
+    body=`<div class="resp-text" style="font-style:italic;color:var(--muted)">${esc(text)}</div>`;
+  }else{
+    body=`<div class="resp-text" id="respText">${esc(text)}</div>${st.victorian?'<div class="vic-flourish">❦</div>':''}`;
+  }
+  holder.innerHTML=`<div class="card resp-card ${vic}">
+    <div class="resp-head"><span class="g">${st.g}</span><span class="n">${st.name}</span></div>
+    ${body}
+    ${loading?'':`<div class="resp-actions">
+      <button class="act" id="copyBtn" onclick="copyResp()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy</button>
+      <button class="act" onclick="shareResp()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5 8.6 10.5"/></svg>Share</button>
+      <button class="act" onclick="saveImage()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-4.5L7 20"/></svg>Image</button>
+    </div>`}
+  </div>`;
+  // remember preferred style
+  if(!loading && state.style){prefs.style=state.style;savePrefs();}
+}
+
+function currentText(){const el=$('respText');return el?el.textContent:(state.cache[state.style+'|'+(state.mods[state.style]||'')]||'');}
+function copyResp(){const t=currentText();if(!t)return;navigator.clipboard.writeText(t).then(()=>{const b=$('copyBtn');if(b){b.classList.add('done');b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Copied';}toast('Reply copied');});}
+async function shareResp(){const t=currentText();if(!t)return;if(navigator.share){try{await navigator.share({text:t});}catch(e){}}else{navigator.clipboard.writeText(t);toast('Copied. Share anywhere');}}
+
+async function saveImage(){
+  const t=currentText();if(!t)return;
+  const st=STYLES.find(s=>s.id===state.style)||STYLES[0];
+  const card=document.createElement('div');
+  card.style.cssText=`position:fixed;left:-9999px;top:0;width:620px;padding:64px 60px;box-sizing:border-box;
+    background:${st.victorian?'#0B0B0C':'#0A0A0A'};
+    font-family:${st.victorian?"'Fraunces',serif":"'Inter',sans-serif"};color:#F4F4F5;border:1px solid rgba(255,255,255,.22)`;
+  card.innerHTML=`
+    <div style="font-family:'JetBrains Mono';font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#FFFFFF">${st.g} ${st.name}</div>
+    <div style="height:1px;background:rgba(255,255,255,.3);margin:26px 0 34px"></div>
+    <div style="font-size:${st.victorian?'34px':'30px'};line-height:1.4;${st.victorian?'font-style:italic;color:#FAFAF8':''}">${esc(t)}</div>
+    <div style="height:1px;background:rgba(255,255,255,.08);margin:38px 0 22px"></div>
+    <div style="display:flex;align-items:center;gap:10px;color:#9A9AA2;font-family:'Inter';font-size:15px">
+      <span style="font-family:'Fraunces';color:#F4F4F5;font-size:17px">Verbal<span style="color:#FFFFFF">Armor</span></span>
+      <span style="opacity:.4">·</span><span>composure as a discipline</span>
+    </div>`;
+  document.body.appendChild(card);
+  try{
+    const canvas=await html2canvas(card,{backgroundColor:null,scale:2});
+    const a=document.createElement('a');a.download='verbal-armor.png';a.href=canvas.toDataURL('image/png');a.click();
+    toast('Image saved');
+  }catch(e){toast('Could not render image');}
+  document.body.removeChild(card);
+}
+
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+
+function resetApp(){
+  state={text:'',analysis:null,style:null,cache:{},mods:{}};
+  $('resultView').classList.add('hidden');$('loadView').classList.add('hidden');
+  $('inputView').classList.remove('hidden');
+  $('msgInput').value='';updateCount();window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ---------- settings ---------- */
+function openSettings(){$('scrim').classList.add('open');$('sheet').classList.add('open');paintSeg();}
+function closeSettings(){$('scrim').classList.remove('open');$('sheet').classList.remove('open');}
+function paintSeg(){
+  [['segTone',prefs.tone],['segLen',prefs.len],['segStyle',prefs.style]].forEach(([id,val])=>{
+    $(id).querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.v===val||(id==='segStyle'&&val===b.dataset.v)));
+  });
+}
+$('segTone').onclick=e=>{if(e.target.dataset.v){prefs.tone=e.target.dataset.v;savePrefs();paintSeg();}};
+$('segLen').onclick=e=>{if(e.target.dataset.v){prefs.len=e.target.dataset.v;savePrefs();paintSeg();}};
+$('segStyle').onclick=e=>{if(e.target.dataset.v){prefs.style=e.target.dataset.v;savePrefs();paintSeg();}};
+
+updateCount();
+</script>
+</body>
+</html>
