@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manish Rohan James — Resume</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: A4;
+      margin: 11mm 13mm 11mm 13mm;
+    }
+
+    body {
+      font-family: 'Calibri', 'Arial', sans-serif;
+      font-size: 10pt;
+      line-height: 1.3;
+      color: #111;
+      background: #fff;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 14px 18px;
+    }
+
+    /* ── HEADER ── */
+    .hd-name {
+      font-size: 17pt;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: #000;
+      text-transform: uppercase;
+    }
+
+    .hd-title {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #333;
+      margin-top: 1px;
+    }
+
+    .hd-contact {
+      font-size: 9pt;
+      color: #333;
+      margin-top: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 6px;
+    }
+
+    .hd-contact span { white-space: nowrap; }
+    .hd-contact span + span::before { content: ' | '; color: #999; }
+
+    .hd-contact a { color: #1a5ca8; text-decoration: none; }
+
+    hr.div {
+      border: none;
+      border-top: 1.5px solid #111;
+      margin: 5px 0 7px 0;
+    }
+
+    /* ── SECTION TITLE ── */
+    .sec {
+      margin-bottom: 8px;
+    }
+
+    .sec-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #000;
+      border-bottom: 1px solid #bbb;
+      padding-bottom: 2px;
+      margin-bottom: 5px;
+    }
+
+    /* ── SKILLS / TOOLS ── */
+    .skills-line {
+      font-size: 9.5pt;
+      line-height: 1.45;
+      color: #111;
+    }
+
+    .skills-line b {
+      color: #000;
+    }
+
+    /* ── EXPERIENCE ── */
+    .job {
+      margin-bottom: 8px;
+    }
+
+    .job-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .job-title {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .job-dates {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #444;
+      white-space: nowrap;
+    }
+
+    .job-sub {
+      font-size: 9pt;
+      color: #444;
+      margin-bottom: 3px;
+    }
+
+    .job-sub em { font-style: italic; }
+
+    ul.bullets {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    ul.bullets li {
+      font-size: 9.5pt;
+      color: #111;
+      padding-left: 12px;
+      position: relative;
+      margin-bottom: 2px;
+      line-height: 1.35;
+    }
+
+    ul.bullets li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #555;
+      font-size: 10pt;
+      line-height: 1.2;
+    }
+
+    /* ── EDUCATION / CERT ROW ── */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.5pt;
+    }
+
+    .edu-deg { font-weight: 700; }
+    .edu-date { color: #444; font-weight: 600; font-size: 9pt; }
+    .edu-school { font-size: 9pt; color: #444; }
+
+    .cert-item {
+      font-size: 9.5pt;
+      color: #111;
+      padding-left: 12px;
+      position: relative;
+      margin-bottom: 2px;
+      line-height: 1.35;
+    }
+
+    .cert-item::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #555;
+    }
+
+    .cert-item a { color: #1a5ca8; font-size: 8.5pt; }
+
+    /* ── LANGUAGES ── */
+    .lang-line { font-size: 9.5pt; color: #111; }
+
+    @media print {
+      body { padding: 0; }
+      a { color: #1a5ca8 !important; text-decoration: none !important; }
+      .sec { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="hd-name">Manish Rohan James</div>
+  <div class="hd-title">AI Generalist &nbsp;|&nbsp; Digital Operations &amp; Project Manager</div>
+  <div class="hd-contact">
+    <span><a href="mailto:manishrohan2.rj@proton.me">manishrohan2.rj@proton.me</a></span>
+    <span>+91-9700035385</span>
+    <span><a href="https://linkedin.com/in/vsmrj">linkedin.com/in/vsmrj</a></span>
+    <span><a href="https://manish-portfolio-5i6.caffeine.xyz">Portfolio</a></span>
+    <span>Hyderabad, India</span>
+    <span>Open to Relocation · Visa Sponsorship Required</span>
+  </div>
+  <hr class="div" />
+
+  <!-- SKILLS & TOOLS -->
+  <div class="sec">
+    <div class="sec-title">Skills &amp; Tools</div>
+    <div class="skills-line">
+      <b>AI / Agentic:</b> Claude, Claude Code, GPT-4, Perplexity AI, Midjourney &nbsp;|&nbsp;
+      <b>Build / Deploy:</b> Vercel, Lovable, Caffeine AI &nbsp;|&nbsp;
+      <b>Automation:</b> Make.com, Zapier, n8n &nbsp;|&nbsp;
+      <b>Social / CMS:</b> Hootsuite, Buffer, Notion &nbsp;|&nbsp;
+      <b>Analytics:</b> Google Analytics 4, Meta Business Suite, LinkedIn Analytics, Excel (Advanced)
+    </div>
+    <div class="skills-line" style="margin-top:3px;">
+      <b>Competencies:</b>
+      Claude Code &amp; AI CLI Tooling &nbsp;·&nbsp;
+      Generative AI &amp; Prompt Engineering &nbsp;·&nbsp;
+      Agentic AI Workflow Automation &nbsp;·&nbsp;
+      GEO &amp; AEO Optimisation &nbsp;·&nbsp;
+      Social Media Operations &nbsp;·&nbsp;
+      Content Strategy &amp; Editorial Planning &nbsp;·&nbsp;
+      Marketing Automation &nbsp;·&nbsp;
+      Business Intelligence &nbsp;·&nbsp;
+      Agile / Scrum &nbsp;·&nbsp;
+      Cross-functional Team Leadership &nbsp;·&nbsp;
+      Digital Asset &amp; Rights Management
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="sec">
+    <div class="sec-title">Professional Experience</div>
+
+    <div class="job">
+      <div class="job-row">
+        <span class="job-title">Social Media Manager</span>
+        <span class="job-dates">Jan 2024 – Mar 2025</span>
+      </div>
+      <div class="job-sub"><a href="https://spotlit.ai">Spotlit AI</a> &nbsp;<em>· Remote</em></div>
+      <ul class="bullets">
+        <li>Built end-to-end automation pipelines for Instagram and LinkedIn, reducing manual publishing effort by ~60% while scaling daily content output across both platforms.</li>
+        <li>Deployed real-time trend monitoring and performance analytics loops enabling rapid content pivots; improved average post reach quarter-over-quarter.</li>
+        <li>Applied GEO (Generative Engine Optimisation) and AEO (Answer Engine Optimisation) principles to content strategy, increasing discoverability on AI-powered search surfaces.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-row">
+        <span class="job-title">Social Media Manager &amp; Content Designer</span>
+        <span class="job-dates">Mar 2023 – Dec 2023</span>
+      </div>
+      <div class="job-sub">Keyblocks Strategy &nbsp;<em>· Hyderabad, India</em></div>
+      <ul class="bullets">
+        <li>Designed and executed integrated content strategies for B2B clients across multiple industries, consistently improving engagement rates and follower growth.</li>
+        <li>Directed content team — setting briefs, managing editorial scheduling, reviewing deliverables, and ensuring quality across all client accounts.</li>
+        <li>Ran multi-channel social campaigns end-to-end (brief → publish → report), delivering performance analytics and data-driven recommendations to clients.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-row">
+        <span class="job-title">Media Delivery Coordinator</span>
+        <span class="job-dates">Jun 2019 – Aug 2021</span>
+      </div>
+      <div class="job-sub"><a href="https://www.cambridge.org">Cambridge University Press</a> &nbsp;<em>· Hyderabad, India</em></div>
+      <ul class="bullets">
+        <li>Coordinated global artwork commissioning and rights compliance for educational publishing assets across international markets — zero compliance breaches across tenure.</li>
+        <li>Managed voiceover and audio asset production end-to-end, liaising with studios, rights holders, and editorial teams across multiple time zones to meet global publication deadlines.</li>
+        <li>Served as central coordination point between editorial, legal, and production teams for digital asset QA and worldwide distribution pipeline.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="sec">
+    <div class="sec-title">Certifications</div>
+    <div class="cert-item">
+      <b>Claude Code in Action</b> &nbsp;·&nbsp; <a href="https://anthropic.com">Anthropic</a> &nbsp;·&nbsp; March 2026
+    </div>
+    <div class="cert-item">
+      <b>Claude 101</b> &nbsp;·&nbsp; <a href="https://anthropic.com">Anthropic</a> &nbsp;·&nbsp; 2026
+    </div>
+    <div class="cert-item">
+      <b>Siemens Project Manager Job Simulation</b> &nbsp;·&nbsp;
+      <a href="https://www.theforage.com/completion-certificates/YtWaumzWHmKiqP63y/zSefEeEKvojiQqiaH_YtWaumzWHmKiqP63y_695ffa3e487d6ae0f5e8101e_1767903376306_completion_certificate.pdf?raw=1">Forage</a>
+      &nbsp;·&nbsp; January 2026 &nbsp;·&nbsp; <em>KPI development · Project dashboards</em>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="sec">
+    <div class="sec-title">Education</div>
+    <div class="edu-row">
+      <span class="edu-deg">Bachelor of Pharmacy (B.Pharm)</span>
+      <span class="edu-date">2011 – 2015</span>
+    </div>
+    <div class="edu-school">Jawaharlal Nehru Technological University Hyderabad (JNTUH) · India</div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="sec">
+    <div class="sec-title">Projects</div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px 20px;">
+
+      <div>
+        <div style="font-size:9.5pt; font-weight:700;">Morion LM
+          <a href="https://morion-lm.vercel.app" style="font-size:8pt; font-weight:400; color:#1a5ca8; margin-left:4px;">↗</a>
+        </div>
+        <div class="job-sub">AI Knowledge Management · Vercel</div>
+        <div style="font-size:9pt; color:#222; line-height:1.35;">LLM-powered knowledge base fusing Obsidian-style PKM with AI note synthesis.</div>
+      </div>
+
+      <div>
+        <div style="font-size:9.5pt; font-weight:700;">CiSe
+          <a href="https://cise-green.vercel.app" style="font-size:8pt; font-weight:400; color:#1a5ca8; margin-left:4px;">↗</a>
+        </div>
+        <div class="job-sub">Developer Toolkit · Vercel</div>
+        <div style="font-size:9pt; color:#222; line-height:1.35;">Minimalist builder toolkit — high-performance logic engines in a distraction-free interface.</div>
+      </div>
+
+      <div>
+        <div style="font-size:9.5pt; font-weight:700;">SpeakFast
+          <a href="https://speak-fast-app.lovable.app" style="font-size:8pt; font-weight:400; color:#1a5ca8; margin-left:4px;">↗</a>
+        </div>
+        <div class="job-sub">Language Learning App · Lovable AI</div>
+        <div style="font-size:9pt; color:#222; line-height:1.35;">Phrase-based app teaching the 1,000 most-spoken phrases in any language, deployed to production.</div>
+      </div>
+
+      <div>
+        <div style="font-size:9.5pt; font-weight:700;">Wellness Drink Website <em style="font-weight:400; font-size:8.5pt;">(Client)</em>
+          <a href="https://cooking-singh.vercel.app" style="font-size:8pt; font-weight:400; color:#1a5ca8; margin-left:4px;">↗</a>
+        </div>
+        <div class="job-sub">Client Delivery · Vercel</div>
+        <div style="font-size:9pt; color:#222; line-height:1.35;">Full production website for a wellness drink brand — brief to live deployment.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LANGUAGES -->
+  <div class="sec">
+    <div class="sec-title">Languages</div>
+    <div class="lang-line">
+      <b>English</b> — Native (C2) &nbsp;|&nbsp;
+      <b>Hindi</b> — Native (C2) &nbsp;|&nbsp;
+      <b>Telugu</b> — Native (C2) &nbsp;|&nbsp;
+      <b>German</b> — A2 (actively learning)
+    </div>
+  </div>
+
+</body>
+</html>
